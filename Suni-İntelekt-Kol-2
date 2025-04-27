@@ -1,0 +1,341 @@
+
+Sprint_3a_task
+
+#1) x dəyişəni verilmişdir. Əgər x > 0 olarsa "müsbət", x < 0 olarsa "mənfi", bərabərdirsə "sıfır" çap etsin.
+x = int(input("eded daxil edin: "))
+
+if x > 0:
+  print("Müsbət")
+elif x < 0:
+  print("Mənfi")
+else:
+  print("Sıfır")
+     
+
+eded daxil edin: 0
+Sıfır
+
+
+#2) n rəqəmi cütdürsə "cüt", təkdirsə "tək" çap etsin.
+n = int(input("Eded daxil edin: "))
+
+if n % 2 == 0:
+  print("cüt")
+else:
+  print("tek")
+     
+
+Eded daxil edin: 33
+tek
+
+
+#3) a, b, c rəqəmləri verilmişdir. Ən böyük rəqəmi çap etsin.
+a = int(input("a üçün Eded daxil edin: "))
+b = int(input("b üçün Eded daxil edin: "))
+c = int(input("c üçün Eded daxil edin: "))
+print("Ən böyük eded:",max(a,b,c))
+     
+
+a üçün Eded daxil edin: 12
+b üçün Eded daxil edin: 21
+c üçün Eded daxil edin: 34
+Ən böyük eded: 34
+
+
+#4) day dəyişəni 1-7 arası rəqəmdir. Müvafiq həftə gününü (1 = "Bazar ertəsi", ..., 7 = "Bazar") çap etsin, əks halda "Yanlış gün" yazsın.
+day = int(input("hefte gunu daxil edin: "))
+
+match day:
+  case 1:
+    print("bazar ertəsi")
+  case 2:
+    print("çərşənbə axşamı")
+  case 3:
+    print("çərşənbə")
+  case 4:
+    print("cümə axşamı")
+  case 5:
+    print("cümə")
+  case 6:
+    print("şənbə")
+  case 7:
+    print("bazar")
+  case _:
+    print("Yanlış gün")
+
+     
+
+hefte gunu daxil edin: 8
+Yanlış gün
+
+
+#5) temp dəyişəni temperaturdur. Əgər temp < 0 olarsa "soyuq", 0-20 arası olarsa "normal", 20-dən böyükdürsə "isti" çap etsin.
+temp = float(input("Eded daxil edin: "))
+
+match temp:
+  case temp if temp < 0 :
+    print("soyuq")
+  case temp if temp >= 0 and temp <= 20 :
+    print("normal")
+  case temp if temp > 20 and temp <=30 :
+    print("isti")
+  case temp if temp > 30 :
+    print("Göydən od yağır")
+
+     
+
+Eded daxil edin: 44
+Göydən od yağır
+
+
+#6) password adlı string verilmişdir. Əgər uzunluğu 8-dən kiçikdirsə "qısa", 8-12 arasıdırsa "orta", 12-dən böyükdürsə "uzun" çap etsin.
+password = input("setir yazın")
+
+if len(password) < 8 :
+  print("qısa")
+elif len(password) >= 8 and len(password) <= 12 :
+  print("orta")
+else:
+  print("uzun")
+     
+
+setir yazınaaaaaaaaaaaaaaa
+uzun
+
+
+#7) x rəqəmi həm 3-ə, # həm də 5-ə bölünürsə "3 və 5",
+  # yalnız 3-ə bölünürsə "3",
+  # yalnız 5-ə bölünürsə "5",
+  # heç birinə bölünmürsə "heç biri" çap etsin.
+
+x = int(input("Eded daxil edin: "))
+
+if x % 3 == 0 and x % 5 == 0 :
+  print("3 və 5")
+elif x % 3 == 0 :
+  print("3")
+elif x % 5 == 0 :
+  print("5")
+else:
+  print("heç biri")
+     
+
+Eded daxil edin: 34
+heç biri
+
+
+#8) 0-dan 20-yə qədər cüt rəqəmləri çap etsin.
+
+for i in range(0, 21, 2):
+    print(i, end=" ")
+     
+
+0 2 4 6 8 10 12 14 16 18 20 
+
+
+#9) "Bağda ərik var idi …" stringinin hər elementini for ilə ayrı-ayrılıqda çap edin.
+
+#hərf bə hərf
+# text = "Bağda ərik var idi …"
+# for char in text:
+#     print(char)
+
+#söz bə söz
+# text = "Bağda ərik var idi …"
+# words = text.split()  # Cümləni boşluqlara görə bölürük
+# for word in words:
+#     print(word)
+
+     
+
+Bağda
+ərik
+var
+idi
+…
+
+
+from itertools import count
+#10) 1-dən 10-a qədər rəqəmləri çap edin, amma 3 xaric.
+
+for i in range(0,11):
+  if i == 3:
+    continue
+  print(i)
+     
+
+0
+1
+2
+4
+5
+6
+7
+8
+9
+10
+
+
+#11) 1-dən başlayaraq ilk 5-ə bölünən rəqəmi tapın və while ilə çap edin (break istifadə edin).
+i = 1
+while True:
+    if i % 5 == 0:
+        print(i)
+        break
+    i += 1
+     
+
+5
+
+
+#12) (1, 3, 5, 7, 9) listində/vectorunda 5-i tapın və indeksini çap edin (break istifadə edin).
+lst = [1, 3, 5, 7, 9]
+for i, value in enumerate(lst):
+    if value == 5:
+        print(i)
+        break
+     
+
+2
+
+Sprint_3b_task
+
+#1) salam adlı funksiya yaradın ki, heç bir arqument almadan sadəcə "Salam, Dünya!" çap etsin.
+def salam():
+  print("Salam, Dünya!")
+
+salam()
+     
+
+Salam, Dünya!
+
+
+#2) kub_hesabla adlı funksiya yaradın ki, bir rəqəm (n) qəbul etsin və onun kubunu qaytarsın.
+def kub_hesabla(n):
+  return n**3
+
+kub_hesabla(3)
+     
+
+27
+
+
+#3) birlesdir adlı funksiya yaradın ki, iki söz qəbul etsin və onları boşluqla birləşdirib qaytarsın.
+def birlesdir(str1,str2):
+  return str1 + " " + str2
+
+birlesdir("Salam","Hamıya")
+     
+
+'Salam Hamıya'
+
+
+#4) cap_et adlı funksiya yaradın ki, bir listi arqument olaraq alsın və listin hər elementini for ilə çap etsin.
+# list = int
+
+def cap_et(list):
+  for i in list:
+    print(i)
+
+cap_et([0,1,2,3,4,5,6,7,8,9])
+     
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+#5) toplam adlı funksiya yaradın ki, istənilən sayda rəqəmi (*args) qəbul edib onların cəmini qaytarsın.
+def toplam(*ededler):
+  return sum(ededler)
+
+toplam(1,2,3,4,5)
+     
+
+15
+
+
+#6) ortalama adlı funksiya yaradın ki, istənilən sayda rəqəmi (*args) qəbul edib onların ortalamasını qaytarsın
+#  (əgər heç bir rəqəm yoxdursa, "Rəqəm yoxdur" qaytarsın).
+import numpy as np
+
+def ortalama(*ededler):
+  return np.mean(ededler)
+
+ortalama(9,8,7,6)
+     
+
+np.float64(7.5)
+
+
+#7) adlar_rəqəmlər adlı funksiya yaradın ki,
+# istənilən sayda ad və rəqəm cütünü (**kwargs) qəbul edib hər cütü çap etsin (məsələn, "ad: bir, rəqəm: 1").
+
+def adlar_rəqəmlər(**kwargs):
+    for ad, rəqəm in kwargs.items():
+        print(f"ad: {ad}, rəqəm: {rəqəm}")
+
+adlar_rəqəmlər(bir=1, iki=2, üç=3)
+     
+
+ad: bir, rəqəm: 1
+ad: iki, rəqəm: 2
+ad: üç, rəqəm: 3
+
+
+#8) tip_yoxla adlı funksiya yaradın ki, bir dəyər qəbul edib onun tipini yoxlasın: "mətn", "rəqəm", "başqa" çap etsin.
+def tip_yoxla(dəyər):
+    if isinstance(dəyər, str):
+        print("mətn")
+    elif isinstance(dəyər, (int, float)):
+        print("rəqəm")
+    else:
+        print("digər")
+
+tip_yoxla("Salam")
+tip_yoxla(123)
+tip_yoxla([1, 2, 3])
+
+     
+
+mətn
+rəqəm
+digər
+
+
+#9) yas_kateqoriya adlı funksiya yaradın ki, input()/readline() ilə yaş soruşsun, 18-dən aşağıysa "Gənc", yuxarıdrsa "Yetkin" çap etsin.
+def yas_kateqoriya():
+    yaş = int(input("Yaşınızı daxil edin: "))
+    if yaş < 18:
+        print("Gənc")
+    else:
+        print("Yetkin")
+
+yas_kateqoriya()
+     
+
+Yaşınızı daxil edin: 22
+Yetkin
+
+
+#10) soz_uzunluq adlı funksiya yaradın ki, input()/readline() ilə istifadəçidən söz alsın və onun uzunluğunu çap etsin.
+def soz_uzunluq():
+    soz = input("Söz daxil edin: ")
+    print(len(soz))
+
+soz_uzunluq()
+     
+
+Söz daxil edin: salam
+5
+
+
+
+     
